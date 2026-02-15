@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawcovery - Dog Surgery Recovery Tracker</title>
+    <meta name="description" content="Track your dog's surgery recovery with Pawcovery. Monitor progress, log exercises, track medications, and get AI-powered guidance through every phase of healing.">
+    <meta name="keywords" content="dog surgery recovery, TPLO recovery, pet health app, dog rehabilitation, veterinary care, pet recovery tracker">
+    <meta property="og:title" content="Pawcovery - Dog Surgery Recovery Tracker">
+    <meta property="og:description" content="Your companion through your dog's recovery journey. Track progress, exercises, medications, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pawcovery.pet">
+    <link rel="canonical" href="https://pawcovery.pet">
+    <style>
+        :root {
+            --primary: #4A90D9;
+            --primary-dark: #3A7BC8;
+            --secondary: #6B7280;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --background: #F9FAFB;
+            --card: #FFFFFF;
+            --text: #1F2937;
+            --text-secondary: #6B7280;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: var(--card);
+            padding: 16px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            font-size: 32px;
+        }
+        
+        nav a {
+            color: var(--secondary);
+            text-decoration: none;
+            margin-left: 24px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #EBF4FF 0%, #F0FDF4 100%);
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .app-store-badge {
+            display: inline-block;
+        }
+        
+        .app-store-badge img {
+            height: 60px;
+        }
+        
+        .hero-image {
+            margin-top: 60px;
+            max-width: 300px;
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 0;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+        
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        
+        .feature-card p {
+            color: var(--text-secondary);
+        }
+        
+        /* Surgery Types */
+        .surgery-types {
+            padding: 80px 0;
+            background: var(--card);
+        }
+        
+        .surgery-types h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .surgery-types > p {
+            text-align: center;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .surgery-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .surgery-tag {
+            background: var(--background);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
+        /* CTA */
+        .cta {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: #1F2937;
+            color: #9CA3AF;
+        }
+        
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        footer a {
+            color: #9CA3AF;
+            text-decoration: none;
+            margin-left: 24px;
+        }
+        
+        footer a:hover {
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            header .container {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            nav a {
+                margin: 0 12px;
+            }
+            
+            footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            footer nav {
+                margin-top: 20px;
+            }
+            
+            footer a {
+                margin: 0 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">
+                <span class="logo-icon">🐾</span>
+                <span>Pawcovery</span>
+            </a>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="/privacy.html">Privacy</a>
+                <a href="/support.html">Support</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Your dog's recovery, <span>simplified</span></h1>
+            <p>Track progress, log exercises, manage medications, and get AI-powered guidance through every phase of your dog's surgery recovery.</p>
+            
+            <a href="https://apps.apple.com/app/pawcovery" class="app-store-badge">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
+        </div>
+    </section>
+    
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Everything you need for recovery</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Recovery Timeline</h3>
+                    <p>Visual progress tracking through each recovery phase with personalized milestones based on your dog's surgery type.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚶</div>
+                    <h3>Exercise Logging</h3>
+                    <p>Track walks, physical therapy sessions, and activities with smart recommendations for each recovery phase.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💊</div>
+                    <h3>Medication Tracking</h3>
+                    <p>Never miss a dose with medication reminders and a complete log of all administered treatments.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Daily Check-ins</h3>
+                    <p>Log pain levels, appetite, incision status, and mood to spot trends and share with your vet.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>Photo Journal</h3>
+                    <p>Document healing progress with photos. Compare incision healing over time with side-by-side views.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Assistant</h3>
+                    <p>Get instant answers to recovery questions from an AI that knows your dog's surgery type and recovery phase.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Family Sharing</h3>
+                    <p>Share your dog's recovery with family members via iCloud. Everyone can log activities and stay updated.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Educational Content</h3>
+                    <p>Access surgery-specific articles, FAQs, and recovery guides written for pet parents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="surgery-types">
+        <div class="container">
+            <h2>Supports 30+ surgery types</h2>
+            <p>Pawcovery includes specialized recovery protocols for orthopedic, soft tissue, dental, and more.</p>
+            
+            <div class="surgery-list">
+                <span class="surgery-tag">TPLO</span>
+                <span class="surgery-tag">TTA</span>
+                <span class="surgery-tag">Lateral Suture</span>
+                <span class="surgery-tag">FHO</span>
+                <span class="surgery-tag">Hip Replacement</span>
+                <span class="surgery-tag">Patella Surgery</span>
+                <span class="surgery-tag">Fracture Repair</span>
+                <span class="surgery-tag">ACL Repair</span>
+                <span class="surgery-tag">Spay/Neuter</span>
+                <span class="surgery-tag">Mass Removal</span>
+                <span class="surgery-tag">Dental Extraction</span>
+                <span class="surgery-tag">Gastropexy</span>
+                <span class="surgery-tag">Splenectomy</span>
+                <span class="surgery-tag">Cataract Surgery</span>
+                <span class="surgery-tag">TECA</span>
+                <span class="surgery-tag">And many more...</span>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <div class="container">
+            <h2>Start your dog's recovery journey today</h2>
+            <p>Free to download. Built with love for dogs and their humans.</p>
+            
+            <a href="https://apps.apple.com/app/pawcovery" class="app-store-badge">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pawcovery. Made with ❤️ in San Francisco.</p>
+            <nav>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/support.html">Support</a>
+                <a href="mailto:support@pawcovery.pet">Contact</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

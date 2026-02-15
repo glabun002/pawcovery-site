@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Pawcovery</title>
+    <meta name="description" content="Privacy Policy for Pawcovery - Dog Surgery Recovery Tracker">
+    <link rel="canonical" href="https://pawcovery.pet/privacy.html">
+    <style>
+        :root {
+            --primary: #4A90D9;
+            --text: #1F2937;
+            --text-secondary: #6B7280;
+            --background: #F9FAFB;
+            --card: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--card);
+            padding: 16px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 24px;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        main {
+            padding: 60px 0;
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+        
+        .last-updated {
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin: 40px 0 16px;
+            padding-top: 20px;
+            border-top: 1px solid #E5E7EB;
+        }
+        
+        h2:first-of-type {
+            border-top: none;
+            margin-top: 0;
+        }
+        
+        h3 {
+            font-size: 18px;
+            margin: 24px 0 12px;
+        }
+        
+        p {
+            margin-bottom: 16px;
+        }
+        
+        ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background: #EBF4FF;
+            border-left: 4px solid var(--primary);
+            padding: 16px 20px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box p {
+            margin: 0;
+        }
+        
+        footer {
+            padding: 40px 0;
+            background: #1F2937;
+            color: #9CA3AF;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #9CA3AF;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        
+        footer a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">
+                <span>🐾</span>
+                <span>Pawcovery</span>
+            </a>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/support.html">Support</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last updated: February 1, 2025</p>
+            
+            <div class="highlight-box">
+                <p><strong>Summary:</strong> Your data stays on your device and in your personal iCloud account. We don't collect, sell, or share your personal information with third parties.</p>
+            </div>
+            
+            <h2>Introduction</h2>
+            <p>Pawcovery ("we", "our", or "the app") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use the Pawcovery iOS application.</p>
+            
+            <h2>Data Storage</h2>
+            <p>Pawcovery stores all your data locally on your device and syncs with your personal Apple iCloud account. We do not operate servers that store your personal data.</p>
+            
+            <h3>What we store:</h3>
+            <ul>
+                <li>Dog profiles (name, breed, surgery details)</li>
+                <li>Recovery logs (exercises, daily check-ins, medications)</li>
+                <li>Appointments and reminders</li>
+                <li>Photos you add to track healing progress</li>
+                <li>AI chat conversations</li>
+            </ul>
+            
+            <h3>Where it's stored:</h3>
+            <ul>
+                <li><strong>On your device:</strong> All data is stored locally using Apple's SwiftData framework</li>
+                <li><strong>In iCloud:</strong> Data syncs to your personal iCloud account for backup and multi-device access</li>
+                <li><strong>CloudKit Sharing:</strong> If you choose to share your dog's recovery with family members, shared data is stored in Apple's CloudKit infrastructure under your iCloud account</li>
+            </ul>
+            
+            <h2>AI Chat Feature</h2>
+            <p>Pawcovery includes an AI assistant to help answer questions about your dog's recovery.</p>
+            
+            <h3>How it works:</h3>
+            <ul>
+                <li>When you ask a question, your message and relevant context (dog's surgery type, recovery phase) is sent to our AI service</li>
+                <li>We use Cloudflare Workers AI to process requests</li>
+                <li>Messages are processed in real-time and are not permanently stored on our servers</li>
+                <li>Your chat history is stored locally on your device</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p><strong>Important:</strong> The AI assistant provides general information only and is not a substitute for professional veterinary advice. Always consult your veterinarian for medical decisions.</p>
+            </div>
+            
+            <h2>Data We DO NOT Collect</h2>
+            <p>We do not collect, store, or have access to:</p>
+            <ul>
+                <li>Your name, email, or contact information</li>
+                <li>Your location data</li>
+                <li>Device identifiers or advertising IDs</li>
+                <li>Usage analytics or tracking data</li>
+                <li>Your iCloud account information</li>
+            </ul>
+            
+            <h2>Third-Party Services</h2>
+            <p>Pawcovery uses the following third-party services:</p>
+            
+            <h3>Apple iCloud (CloudKit)</h3>
+            <p>Used for data sync and backup. Subject to <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</p>
+            
+            <h3>Cloudflare Workers AI</h3>
+            <p>Powers the AI chat feature. Subject to <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Cloudflare's Privacy Policy</a>.</p>
+            
+            <h2>Data Sharing</h2>
+            <p>We do NOT sell, rent, or share your personal information with third parties for marketing purposes.</p>
+            
+            <p>Your data may be shared only in these situations:</p>
+            <ul>
+                <li><strong>Family Sharing:</strong> If you choose to share your dog's recovery data with family members using CloudKit Sharing</li>
+                <li><strong>Legal Requirements:</strong> If required by law or to protect our legal rights</li>
+            </ul>
+            
+            <h2>Data Security</h2>
+            <p>Your data is protected by:</p>
+            <ul>
+                <li>Apple's iOS security features including encryption</li>
+                <li>iCloud's encryption for data in transit and at rest</li>
+                <li>Your device passcode and/or biometric authentication</li>
+            </ul>
+            
+            <h2>Your Rights</h2>
+            <p>You have full control over your data:</p>
+            <ul>
+                <li><strong>Access:</strong> All your data is visible within the app</li>
+                <li><strong>Export:</strong> You can export your data from the Settings menu</li>
+                <li><strong>Delete:</strong> Delete the app to remove all local data. Manage iCloud data through iOS Settings</li>
+            </ul>
+            
+            <h2>Children's Privacy</h2>
+            <p>Pawcovery is not directed at children under 13. We do not knowingly collect personal information from children.</p>
+            
+            <h2>Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy in the app and on this page.</p>
+            
+            <h2>Contact Us</h2>
+            <p>If you have questions about this Privacy Policy, please contact us:</p>
+            <ul>
+                <li>Email: <a href="mailto:privacy@pawcovery.pet">privacy@pawcovery.pet</a></li>
+                <li>Website: <a href="https://pawcovery.pet/support.html">pawcovery.pet/support</a></li>
+            </ul>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Pawcovery</p>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/privacy.html">Privacy</a>
+            <a href="/support.html">Support</a>
+        </nav>
+    </footer>
+</body>
+</html>
